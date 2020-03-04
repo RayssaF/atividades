@@ -3,14 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <title>{{titulo}}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.css')}}">
 </head>
-<body>
+<body class="container">
      <h1>{{titulo}}</h1>
-    <ul>
-        {% for e in eventos %}
-        <li>{{ e }}</li>
+    <table class="table">
+        {% for u in usuarios %}
+        <tr>
+            <td>{{ u.nome }}</td>
+            <td>{{ u.email }}</td>
+        </tr>
         {% endfor %}
-    </ul>
+    </table>
 
+
+    <button class="btn btn-success"> Listar </button>
 </body>
 </html>
